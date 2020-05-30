@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Slider</title>
+    <title>Live Search</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -21,26 +21,18 @@
         body {
             height: 100%;
             background-color: #E0E0E0;
+            padding: 10px;
         }
 
-        .slider-selection {
-            background-image: none;
-        }
-
-        .good div.slider-selection {
-            background-color: green !important;
-        }
-
-        .warn div.slider-selection {
-            background-color: orange !important;
-        }
-
-        .bad div.slider-selection {
-            background-color: red !important;
-        }
     </style>
 </head>
 <body>
-<input id="quality" name="quality" type="text">
+<div class="form-group">
+    <label for="search">Search Repo</label>
+    <input type="email" class="form-control" id="search" aria-describedby="emailHelp"
+           placeholder="Enter repo name">
+    <div class="container">
+    </div>
+</div>
 </body>
 </html>
