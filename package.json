@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bootstrap-slider": "^9.9.1",
+    "@types/jquery": "^3.3.38",
     "html-webpack-plugin": "^4.3.0",
     "ts-loader": "^7.0.5",
     "ts-node": "^8.10.2",

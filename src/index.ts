@@ -1,1 +1,1 @@
-import './swipe';
+import './slider';
