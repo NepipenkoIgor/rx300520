@@ -1,6 +1,6 @@
-import { fromEvent, Observable } from "rxjs";
+import { EMPTY, fromEvent, Observable } from "rxjs";
 import {
-    bufferCount,
+    bufferCount, catchError,
     concatAll,
     debounceTime,
     distinctUntilChanged,
@@ -29,7 +29,7 @@ export function liveSearch(
             map((value) => value.trim()),
             filter((value: string) => value.length > 3),
             distinctUntilChanged(),
-            switchMap(request)
+            switchMap(request),
         )
 }
 
@@ -43,7 +43,11 @@ export function request(source$: Observable<any>) {
         reduce((resultStr: string, htmlStrs: string[]) => {
             return resultStr += createRow(htmlStrs)
         }, ''),
-        map((htmlStr) => htmlStr.trim().replace(/\s+(<)/g, '<'))
+        map((htmlStr) => htmlStr.trim().replace(/\s+(<)/g, '<')),
+        catchError((err) => {
+            console.log('CATCH err', err);
+            return ''
+        }),
     )
 }
 
